@@ -1,6 +1,6 @@
 {
   "name": "rich-text-to-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Map a Contentful rich text field to React component tree.",
   "author": "storybynumbers",
   "license": "MIT",

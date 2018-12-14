@@ -15,7 +15,7 @@ npm install --save rich-text-to-react
 ## Usage
 
 ```javascript
-import RichText from '@storybynumbers/rich-text-to-react';
+import RichText from 'rich-text-to-react';
 import SampleRichFieldData from './data'
 
 export default () => (
@@ -28,7 +28,7 @@ export default () => (
 You can also pass custom renderers for both marks and nodes:
 
 ```javascript
-import RichTextToReact from '@storybynumbers/rich-text-to-react';
+import RichTextToReact from 'rich-text-to-react';
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
 import MyCustomComponent from '~/components/MyCustomComponent'
 
