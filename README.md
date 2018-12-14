@@ -2,7 +2,7 @@
 
 > Map a Contentful rich text field to React component tree.
 
-Warning: this is in alpha state, and this is not an official Contentful module. It is largely based off their [rich-text-html-renderer](https://github.com/contentful/rich-text#readme) library.
+Warning: this is in alpha state, and this is not an official Contentful module. It is largely based off their [rich-text-html-renderer](https://github.com/contentful/rich-text#readme) library. The purpose is to map a [Rich Text field from Contentful](https://www.contentful.com/developers/docs/concepts/rich-text/) to React components.
 
 [![NPM](https://img.shields.io/npm/v/rich-text-to-react.svg)](https://www.npmjs.com/package/rich-text-to-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
