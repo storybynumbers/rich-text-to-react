@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import RichTextToReact from './'
 
-describe('ExampleComponent', () => {
+describe('RichTextToReact', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(RichTextToReact).toBeTruthy()
   })
 })

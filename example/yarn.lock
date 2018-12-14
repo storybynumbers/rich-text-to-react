@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@contentful/rich-text-types@^12.0.1":
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-12.0.1.tgz#e7fdee0ea679e95c3bbf39567c059ca4d3870dbe"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"

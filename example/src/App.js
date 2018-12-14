@@ -1,12 +1,31 @@
 import React, { Component } from 'react'
+import RichTextToReact from 'rich-text-to-react'
+import SampleData from './data'
+import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
+import InlineEmbedHandler from './InlineEmbedHandler'
 
-import ExampleComponent from 'rich-text-to-react'
+const options = {
+  renderNode: {
+    [INLINES.EMBEDDED_ENTRY]: (node, key) => (
+      <InlineEmbedHandler key={key} node={node} />
+    ),
+    [BLOCKS.PARAGRAPH]: (node, key, next) => (
+      <p key={key} style={{ border: '#ccc 2px dotted', padding: '15px' }}>
+        {next(node.content, key, next)}
+      </p>
+    )
+  },
+  renderMark: {
+    [MARKS.BOLD]: (text, key) => <strong key={key} style={{ color: 'red' }}>{text}!</strong>
+  }
+}
+
 
 export default class App extends Component {
   render () {
     return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
+      <div style={{ padding: 20 }}>
+        <RichTextToReact document={SampleData.json} options={options} />
       </div>
     )
   }
