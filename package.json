@@ -27,8 +27,7 @@
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "@contentful/rich-text-types": "^12.0.1",
-    "escape-html": "^1.0.3"
+    "@contentful/rich-text-types": "^12.0.1"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
