@@ -15,11 +15,11 @@ npm install --save rich-text-to-react
 ## Usage
 
 ```javascript
-import RichText from 'rich-text-to-react';
+import RichTextToReact from 'rich-text-to-react';
 import SampleRichFieldData from './data'
 
 export default () => (
-  <RichText document={SampleRichFieldData.json} />
+  <RichTextToReact document={SampleRichFieldData.json} />
 )
 ```
 
@@ -28,7 +28,7 @@ export default () => (
 You can also pass custom renderers for both marks and nodes:
 
 ```javascript
-import RichText from 'rich-text-to-react';
+import RichTextToReact from 'rich-text-to-react';
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
 import MyCustomComponent from '~/components/MyCustomComponent'
 
@@ -44,7 +44,7 @@ const options = {
 }
 
 export default () => (
-  <RichText document={myFieldValue.json} options={options} />
+  <RichTextToReact document={myFieldValue.json} options={options} />
 )
 ```
 
