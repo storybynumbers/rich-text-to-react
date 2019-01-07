@@ -28,7 +28,7 @@ export default () => (
 You can also pass custom renderers for both marks and nodes:
 
 ```javascript
-import RichTextToReact from 'rich-text-to-react';
+import RichText from 'rich-text-to-react';
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
 import MyCustomComponent from '~/components/MyCustomComponent'
 
@@ -44,7 +44,7 @@ const options = {
 }
 
 export default () => (
-  <RichTextToReact document={myFieldValue.json} options={options} />
+  <RichText document={myFieldValue.json} options={options} />
 )
 ```
 
