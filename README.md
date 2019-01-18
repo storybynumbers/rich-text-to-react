@@ -15,11 +15,11 @@ npm install --save rich-text-to-react
 ## Usage
 
 ```javascript
-import RichText from 'rich-text-to-react';
+import RichTextToReact from 'rich-text-to-react';
 import SampleRichFieldData from './data'
 
 export default () => (
-  <RichText document={SampleRichFieldData.json} />
+  <RichTextToReact document={SampleRichFieldData.json} />
 )
 ```
 
