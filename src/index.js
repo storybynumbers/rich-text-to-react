@@ -66,7 +66,7 @@ const renderNode = (node, key, next) => {
     }
     if (!node.nodeType || !nodeRenderer[node.nodeType]) {
       // TODO: Figure what to return when passed an unrecognized node.
-      return '(Unrecognized node type)'
+      return '(Unrecognized node type: ' + node.nodeType + ')'
     }
     return nodeRenderer[node.nodeType](node, key, nextNode)
   }
