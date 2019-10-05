@@ -49,18 +49,18 @@ const defaultNodeRenderers = {
   }
 }
 
-const renderNodeList = (nodes, key, next) => {
-  return nodes.map((node, i) => renderNode(node, `${key}-${i}`, next))
+const renderNodeList = (nodes, key, renderers) => {
+  return nodes.map((node, i) => renderNode(node, `${key}-${i}`, renderers))
 }
 
-const renderNode = (node, key, next) => {
-  const nodeRenderer = next.node
+const renderNode = (node, key, renderers) => {
+  const nodeRenderer = renderers.node
   if (helpers.isText(node)) {
     // We're at final tip of node branch, can render text.
-    const markerRender = next.mark
+    const markerRender = renderers.mark
     return nodeRenderer.text(node, key, markerRender)
   } else {
-    const nextNode = nodes => renderNodeList(nodes, key, next)
+    const nextNode = nodes => renderNodeList(nodes, key, renderers)
     if (!nodeRenderer) {
       return <div>{`${key} ;lost nodeRenderer`}</div>
     }
@@ -68,21 +68,28 @@ const renderNode = (node, key, next) => {
       // TODO: Figure what to return when passed an unrecognized node.
       return '(Unrecognized node type: ' + node.nodeType + ')'
     }
-    return nodeRenderer[node.nodeType](node, key, nextNode)
+    return nodeRenderer[node.nodeType](node, key, nextNode, renderers.options)
   }
 }
 
 const RichTextToReact = ({ document, options = {} }) => {
-  // console.log(options)
+  const { renderNode, renderMark, ...renderOptions } = options
   const renderer = {
     node: {
       ...defaultNodeRenderers,
-      ...options.renderNode
+      ...renderNode,
     },
     mark: {
       ...defaultMarkRenderers,
-      ...options.renderMark
+      ...renderMark
+    },
+    options: {
+      ...renderOptions
     }
+  }
+  if (!document || !document.content) {
+    console.error('Invalid document passed to component. Is the entry published?', document)
+    return null
   }
   return renderNodeList(document.content, 'RichText-', renderer)
 }
