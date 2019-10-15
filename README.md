@@ -30,7 +30,7 @@ You can also pass custom renderers for both marks and nodes:
 ```javascript
 import RichTextToReact from 'rich-text-to-react';
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
-import MyCustomComponent from '~/compon  ents/MyCustomComponent'
+import MyCustomComponent from '~/components/MyCustomComponent'
 
 const renderingOptions = {
   renderMark: {
