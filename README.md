@@ -30,23 +30,37 @@ You can also pass custom renderers for both marks and nodes:
 ```javascript
 import RichTextToReact from 'rich-text-to-react';
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
-import MyCustomComponent from '~/components/MyCustomComponent'
+import MyCustomComponent from '~/compon  ents/MyCustomComponent'
 
-const options = {
+const renderingOptions = {
   renderMark: {
     // Render all bold text in red.
     [MARKS.BOLD]: (text, key) => <strong key={key} style={{ color: 'red' }}>{text}</strong>
   },
   renderNode: {
     // Pass the node data for the inline embed to MyCustomComponent.
-    [INLINES.EMBEDDED_ENTRY]: (node, key) => <MyCustomComponent key={`RichText-${key}`} node={node} />
-  }
+    [INLINES.EMBEDDED_ENTRY]: (node, key, next, options) => <MyInlineComponent key={key} node={node} {...options} />,
+    [BLOCKS.EMBEDDED_ENTRY]: (node, key, next, options) => <MyBlockComponent key={key} node={node} {...options} />,
+    [BLOCKS.HEADING_1]: (node, key, next) => <Heading key={key} as="h1">{next(node.content, key, next)}</Heading>,
+  },
+  foo: 'bar',
 }
 
 export default () => (
-  <RichTextToReact document={myFieldValue.json} options={options} />
+  <RichTextToReact document={myFieldValue.json} options={renderingOptions} />
 )
 ```
+
+The object passed to RichTextToReact's `options` prop should have two keys, `renderMark` and `renderNode`, each containing objects. Those objects
+should be keyed with Rich Text types (see next section) to assign rendering functions with a type of a Rich Text node (heading, list item, link).
+
+Rendering functions are passed the following arguments:
+
+- `node` - Section of the Rich Text document being processed
+- `key` - Unique key used internally by React
+- `next` - Utility function to iterate through the Rich Text document
+- `options` - Any additional properties (everything except renderMark and renderNode) will be passed here. In the example above, MyInlineComponent will receive the prop 'foo' with value 'bar'.
+
 
 ## Rich Text types
 
@@ -81,6 +95,7 @@ The `renderMark` keys should be one of the following `MARKS` properties as defin
 - `ITALIC`
 - `UNDERLINE`
 - `CODE`
+
 
 ## License
 
