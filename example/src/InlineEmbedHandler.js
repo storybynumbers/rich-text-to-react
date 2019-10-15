@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ node }) => {
+const InlineEmbedHandler = ({ node }) => {
     // Here you can place your custom inline embed handling.
     return (
         <span style={{
@@ -11,3 +11,4 @@ export default ({ node }) => {
         }}>A custom rendering of sys.id: {node.data.target.sys.id}</span>
     )
 }
+export default InlineEmbedHandler
