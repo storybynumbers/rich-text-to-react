@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "padding": 20,
+    }
+  }
+>
+  <p
+    style={
+      Object {
+        "border": "#ccc 2px dotted",
+        "padding": "15px",
+      }
+    }
+  >
+    Hello, world. 
+    <strong
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      This text is bold
+      !
+    </strong>
+    . This is 
+    <em>
+      <strong
+        style={
+          Object {
+            "color": "red",
+          }
+        }
+      >
+        bold and italic
+        !
+      </strong>
+    </em>
+    . 
+    <span
+      style={
+        Object {
+          "border": "1px solid #d3dce0",
+          "fontFamily": "monospace",
+          "margin": "0px 5px",
+          "padding": "0 .25rem 0 .75rem",
+        }
+      }
+    >
+      A custom rendering of sys.id: 
+      7zSrW8Ps9awiuqcMgOagO
+    </span>
+    
+  </p>
+</div>
+`;
