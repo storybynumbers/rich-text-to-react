@@ -25,6 +25,10 @@ export default class App extends Component {
   render () {
     return (
       <div style={{ padding: 20 }}>
+        <h1>Rich text to React renderer</h1>
+        <h2>Default rendering</h2>
+        <RichTextToReact document={SampleData.json}  />
+        <h2>Rendering with options</h2>
         <RichTextToReact document={SampleData.json} options={options} />
       </div>
     )

@@ -8,6 +8,110 @@ exports[`Matches snapshot 1`] = `
     }
   }
 >
+  <h1>
+    Rich text to React renderer
+  </h1>
+  <h2>
+    Default rendering
+  </h2>
+  <p>
+    Hello, world. 
+    <strong>
+      This is bold text
+    </strong>
+    . This is
+    <em>
+       italic
+    </em>
+    . This is 
+    <em>
+      <strong>
+        bold and italic
+      </strong>
+    </em>
+    . 
+    <u>
+      Underlined
+    </u>
+    .
+  </p>
+  <p>
+    The start of a new paragraph 
+    <a
+      href="https://eyefilm.nl"
+    >
+      with link
+    </a>
+    .
+  </p>
+  <ul>
+    <li>
+      <p>
+        List item one
+      </p>
+    </li>
+    <li>
+      <p>
+        List item two
+      </p>
+    </li>
+  </ul>
+  <p>
+    
+    <span
+      style={
+        Object {
+          "border": "1px solid #d3dce0",
+          "fontFamily": "monospace",
+          "margin": "0px 5px",
+          "padding": "0 .25rem 0 .75rem",
+        }
+      }
+    >
+      inline: 
+      entry-hyperlink
+       , sys.id: 
+      325gWWU4JzJ6VpFfNb7fKw
+    </span>
+    
+  </p>
+  <ol>
+    <li>
+      <p>
+        Ordered one
+      </p>
+    </li>
+    <li>
+      <p>
+        Ordered two
+      </p>
+    </li>
+  </ol>
+  <p>
+    <code>
+      &lt;?php
+      echo 'test';
+      ?&gt;
+    </code>
+  </p>
+  <blockquote>
+    <p>
+      blockquoting this
+    </p>
+    <p>
+      another paragraph with 
+      <strong>
+        bold
+      </strong>
+    </p>
+  </blockquote>
+  <hr />
+  <p>
+    
+  </p>
+  <h2>
+    Rendering with options
+  </h2>
   <p
     style={
       Object {
@@ -24,9 +128,13 @@ exports[`Matches snapshot 1`] = `
         }
       }
     >
-      This text is bold
+      This is bold text
       !
     </strong>
+    . This is
+    <em>
+       italic
+    </em>
     . This is 
     <em>
       <strong
@@ -41,6 +149,62 @@ exports[`Matches snapshot 1`] = `
       </strong>
     </em>
     . 
+    <u>
+      Underlined
+    </u>
+    .
+  </p>
+  <p
+    style={
+      Object {
+        "border": "#ccc 2px dotted",
+        "padding": "15px",
+      }
+    }
+  >
+    The start of a new paragraph 
+    <a
+      href="https://eyefilm.nl"
+    >
+      with link
+    </a>
+    .
+  </p>
+  <ul>
+    <li>
+      <p
+        style={
+          Object {
+            "border": "#ccc 2px dotted",
+            "padding": "15px",
+          }
+        }
+      >
+        List item one
+      </p>
+    </li>
+    <li>
+      <p
+        style={
+          Object {
+            "border": "#ccc 2px dotted",
+            "padding": "15px",
+          }
+        }
+      >
+        List item two
+      </p>
+    </li>
+  </ul>
+  <p
+    style={
+      Object {
+        "border": "#ccc 2px dotted",
+        "padding": "15px",
+      }
+    }
+  >
+    
     <span
       style={
         Object {
@@ -51,9 +215,94 @@ exports[`Matches snapshot 1`] = `
         }
       }
     >
-      A custom rendering of sys.id: 
-      7zSrW8Ps9awiuqcMgOagO
+      inline: 
+      entry-hyperlink
+       , sys.id: 
+      325gWWU4JzJ6VpFfNb7fKw
     </span>
+    
+  </p>
+  <ol>
+    <li>
+      <p
+        style={
+          Object {
+            "border": "#ccc 2px dotted",
+            "padding": "15px",
+          }
+        }
+      >
+        Ordered one
+      </p>
+    </li>
+    <li>
+      <p
+        style={
+          Object {
+            "border": "#ccc 2px dotted",
+            "padding": "15px",
+          }
+        }
+      >
+        Ordered two
+      </p>
+    </li>
+  </ol>
+  <p
+    style={
+      Object {
+        "border": "#ccc 2px dotted",
+        "padding": "15px",
+      }
+    }
+  >
+    <code>
+      &lt;?php
+      echo 'test';
+      ?&gt;
+    </code>
+  </p>
+  <blockquote>
+    <p
+      style={
+        Object {
+          "border": "#ccc 2px dotted",
+          "padding": "15px",
+        }
+      }
+    >
+      blockquoting this
+    </p>
+    <p
+      style={
+        Object {
+          "border": "#ccc 2px dotted",
+          "padding": "15px",
+        }
+      }
+    >
+      another paragraph with 
+      <strong
+        style={
+          Object {
+            "color": "red",
+          }
+        }
+      >
+        bold
+        !
+      </strong>
+    </p>
+  </blockquote>
+  <hr />
+  <p
+    style={
+      Object {
+        "border": "#ccc 2px dotted",
+        "padding": "15px",
+      }
+    }
+  >
     
   </p>
 </div>
