@@ -39,8 +39,8 @@ const renderingOptions = {
   },
   renderNode: {
     // Pass the node data for the inline embed to MyCustomComponent.
-    [INLINES.EMBEDDED_ENTRY]: (node, key, next, options) => <MyInlineComponent key={key} node={node} {...options} />,
-    [BLOCKS.EMBEDDED_ENTRY]: (node, key, next, options) => <MyBlockComponent key={key} node={node} {...options} />,
+    [INLINES.EMBEDDED_ENTRY]: (node, key, next, links) => <MyInlineComponent key={key} node={node} links={links} />,
+    [BLOCKS.EMBEDDED_ENTRY]: (node, key, next, links) => <MyBlockComponent key={key} node={node} links={links} />,
     [BLOCKS.HEADING_1]: (node, key, next) => <Heading key={key} as="h1">{next(node.content, key, next)}</Heading>,
   },
   foo: 'bar',
